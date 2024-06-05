@@ -1,0 +1,307 @@
+/* GENERAL */
+
+body {
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* ---------------INICIO------------------------ */
+
+.fondo_inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    /* width: auto; */
+}
+.contenedor_inicio{
+    display: grid;
+    grid-template: 25% 75% / 100%;
+    width: 70vw;
+    height: 70vh;
+    border: 1px solid black;
+    min-width: 320px;
+    min-height: 290px;
+    max-width: 620px;
+    max-height: 420px;
+    /* background-color: lightblue; */
+    background: #fff; /* Background color of the div */
+    border: 5px solid transparent; /* Base border */
+    border-image: linear-gradient(45deg, #DAA520, #FFD700, #B8860B) 1; /* Golden gradient border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), /* Soft shadow */
+                inset 0 0 10px rgba(255, 215, 0, 0.6), /* Inner shadow for 3D effect */
+                0 0 10px rgba(255, 215, 0, 0.8); /* Outer glow */
+    padding: 20px; /* Space inside the div */
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+}
+
+.titulo_inicio{
+    grid-row: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    font-size: 2em;
+    color: #141414;
+    font-weight: 300;
+}
+
+.cuentas_inicio{
+    grid-row: 2/2;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.botones_inicio, .boton_perfil_dentro, .boton_confirmar_cambio{
+    font-size:1em;
+    font-family:Arial;
+    width:140px;
+    height:50px;
+    border-width:2px;
+    color:#505739;
+    border-color:#333029;
+    font-weight:bold;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+    box-shadow: 0px 1px 0px 0px #1c1b18;
+    text-shadow: 0px 1px 0px #ffffff;
+    background:linear-gradient(#eae0c2, #ccc2a6); 
+}
+
+.botones_inicio:hover, .boton_perfil_dentro:hover, .boton_confirmar_cambio:hover{
+    background: linear-gradient(#ccc2a6, #ccc2a6);
+}
+
+/* PERFIL */
+
+.fondo_perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    /* width: auto; */
+}
+
+.contenedor_perfil{
+    display: grid;
+    grid-template: 10% 8% 13% 8% 8% 45% 8% / 100%;
+    width: 90vw;
+    height: 90vh;
+    border: 1px solid black;
+    min-width: 220px;
+    min-height: 290px;
+    max-width: 780px;
+    max-height: 600px;
+    background-color: #E5E4E2;
+    padding: 0px 10px;
+    border-radius: 8px;
+}
+
+.cuenta_perfil{
+    grid-row: 1/1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: clamp(1em, 3vw, 2em);
+    font-weight: bold;
+}
+
+.saldo_perfil{
+    grid-row: 2/2;
+    display: grid;
+    align-items: center;
+    font-size: clamp(1em, 3vw, 2em);
+}
+
+.boton_perfil{
+    grid-row: 3/3;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert_alert-success{
+    grid-row: 4/4;
+    display: grid;
+    align-items: center;
+}
+
+.ultima_perfil{
+    grid-row: 5/5;
+    display: grid;
+    align-items: center;
+    font-size: clamp(1em, 3vw, 2em);
+}
+
+.historial_perfil{
+    grid-row: 6/6;
+    display: flex;
+    /* font-size: small; */
+    align-items: center;
+    justify-content: center;
+}
+
+.tabla_perfil{
+    border-collapse: collapse;
+    font-size: clamp(0.5em, 1.2vw, 1em);
+    height: auto;
+    width: auto;
+}
+
+.salir_perfil{
+    grid-row: 7/7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.boton_salir_perfil, .boton_cancelar_cambio {
+    font-size:1em;
+    font-family:Arial;
+    width:auto;
+    height:auto;
+    border-width:1px;
+    color:#ffffff;
+    border-color:#d83526;
+    font-weight:bold;
+    border-top-left-radius:6px;
+    border-top-right-radius:6px;
+    border-bottom-left-radius:6px;
+    border-bottom-right-radius:6px;
+    box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+    text-shadow:inset 0px 1px 0px #b23e35;
+    background:linear-gradient(#fc8d83, #e4685d);
+  }
+  
+  .boton_salir_perfil:hover, .boton_cancelar_cambio:hover {
+    background: linear-gradient(#e4685d, #fc8d83);
+  }
+                
+/*-------------- CAMBIO --------------------------*/
+
+.fondo_cambio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    /* width: auto; */
+}
+
+.contenedor_cambio{
+    display: grid;
+    grid-template: 70% 15% 15% / 100%;
+    width: 90vw;
+    height: 90vh;
+    border: 1px solid black;
+    min-width: 220px;
+    min-height: 290px;
+    max-width: 780px;
+    max-height: 600px;
+    background-color: #E5E4E2;
+    padding: 0px 10px;
+    border-radius: 8px;
+}
+
+.form_cambio{
+    grid-row: 1/1;
+    display: grid;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.aclaracion_cambio{
+    grid-row: 2/2;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.7em, 2vw, 1em);
+    
+}
+
+.cancelar_cambio{
+    grid-row: 3/3;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+/* grid dentro del form de cambio */
+
+.form_resultados_cambio{
+    display: grid;
+    grid-template: 22% 22% 22% 22% 12%/ 100%;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.origen_cambio{
+    grid-row: 1/1;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: clamp(0.8em, 2vw, 1.2em);
+}
+
+.destino_cambio{
+    grid-row: 2/2;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: clamp(1em, 3vw, 1.5em);
+}
+
+.monto_cambio{
+    grid-row: 3/3;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: clamp(1em, 3vw, 1.5em);
+}
+
+.boton_cambio{
+    grid-row: 4/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errores_cambio{
+    grid-row: 5/5;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: clamp(0.7em, 2vw, 1em);
+    color: #d83526;
+}
+
+select{
+    border: 1px solid black;
+    background-color: white;
+    font-size: clamp(0.5em, 1.5vw, 0.7em);
+}
+
+input{
+    border: 1px solid black;
+    font-size: 0.8em;
+}
+
+#id_change{
+    background-color: WHITE;
+}
+
+/* .prueba{
+    color: green;
+} */

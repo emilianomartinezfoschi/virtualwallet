@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'estilos.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    {% for x in colores %}
+    <h1>{{ x }}</h1>
+    {% endfor %}
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus voluptatem quisquam nesciunt aut voluptas
+        minima beatae vero, repellat sapiente adipisci.</p>
+</body>
+
+</html>

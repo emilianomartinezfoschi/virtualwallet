@@ -1,0 +1,59 @@
+{% extends "master.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'estilos.css' %}">
+<link rel="icon" href="{% static 'favicon.ico' %}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Operacion{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="fondo_cambio">
+        <div class="contenedor_cambio">
+            <div class="form_cambio">
+                <form class="form_resultados_cambio" method=POST action="">
+                    {% csrf_token %}
+                    <!-- {{ form.as_p }} -->
+                    {{ form.date_time_form.as_hidden }}
+                    {{ form.origin.as_hidden }}
+                    <div class="origen_cambio">
+                        ORIGEN DEL DINERO: {{ form.origin.value }}
+                    </div>
+                    <div class="destino_cambio">
+                        DESTINO DEL DINERO: {{ form.destino_del_dinero }}
+                    </div>
+                    <div class="monto_cambio">
+                        MONTO: {{ form.change }}
+                    </div>
+                    <div class="boton_cambio">
+                        <input type="hidden" name="nombre" value="{{ micliente.name }}">
+                        <input class="boton_confirmar_cambio" type="submit" value="CONFIRMAR">
+                    </div>
+                    <div class="errores_cambio">
+                        {{ form.non_field_errors }}
+                        {{ form.field_name.errors }}
+                        {{ form.change.errors }}
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div class="aclaracion_cambio">
+                <b><u>Aclaración:</u></b>Si eliges tu nombre harás un depósito, si eliges el nombre de otra persona
+                harás una transferencia y si eliges Extraer retirarás dinero de tu cuenta.
+            </div>
+            <BR></BR>
+            <div class="cancelar_cambio">
+                <button class="boton_cancelar_cambio"><a href="/perfil/{{ micliente.name }}">CANCELAR</a></button>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

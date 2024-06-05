@@ -1,0 +1,65 @@
+{% extends "master.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'estilos.css' %}">
+<link rel="icon" href="{% static 'favicon.ico' %}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cuenta{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="fondo_perfil">
+        <div class="contenedor_perfil">
+            <div class="cuenta_perfil">
+                Cuenta de {{ micliente.name }}
+            </div>
+            <div class="saldo_perfil">
+                Saldo: $ {{ micliente.balance }}
+            </div>
+            <div class="boton_perfil">
+                <form action="/cambio/{{ micliente.name }}">
+                    <input type="hidden" name='{{ micliente.name }}'>
+                    <button type="submit" class="boton_perfil_dentro"><a href="/cambio/{{ micliente.name }}">REALIZAR
+                            OPERACION</a></button>
+                </form>
+            </div>
+            {% for message in messages %}
+            <div class="alert_alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <div class="ultima_perfil">
+                Última modificación {{ micliente.date_time }}
+            </div>
+            <div class="historial_perfil">
+                <table class="tabla_perfil" border="1">
+                    <caption>HISTORIAL DE OPERACIONES</caption>
+                    <tr>
+                        <th>DESTINO</th>
+                        <th>MONTO</th>
+                        <th>FECHA</th>
+                    </tr>
+                    {% for x in dbhistorialcliente %}
+                    <tr>
+                        <td>{{ x.destino_del_dinero }}</td>
+                        <td>{{ x.change }}</td>
+                        <td>{{ x.date_time_form }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="salir_perfil">
+                <button class="boton_salir_perfil"><a href="/">Salir</a></button>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

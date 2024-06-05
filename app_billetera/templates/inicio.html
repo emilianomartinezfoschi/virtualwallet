@@ -1,0 +1,37 @@
+{% extends "master.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<link rel="stylesheet" href="{% static 'estilos.css' %}">
+<link rel="icon" href="{% static 'favicon.ico' %}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block title %}
+    Wallet
+    {% endblock %}
+    {% block content %}
+    <div class="fondo_inicio">
+        <div class="contenedor_inicio">
+            <div class="titulo_inicio">
+                Elige una cuenta para comenzar
+            </div>
+            <div class="cuentas_inicio">
+                {% for x in misclientes %}
+                <button class="botones_inicio">
+                    <a href="perfil/{{ x.name }}">{{x.name}}</a>
+                </button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
