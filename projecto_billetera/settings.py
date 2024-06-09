@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-bg0t$4-373vhjjw0%*e@#wo933^5@ms0#*^@8#-bd5-4@qzd4g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["emilianomartinezfoschi.alwaysdata.net"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         "NAME": "db_billetera",
         "USER": "postgres",
         "PASSWORD": "1234",
-        "HOST": "postgresql-server.alwaysdata.com",
+        "HOST": "localhost",
         "PORT": "5432",
     }
 }
