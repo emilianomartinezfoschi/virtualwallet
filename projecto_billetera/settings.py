@@ -10,11 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 from decouple import Config, Csv, RepositoryEnv
-
-# from decouple import config
-import os
 
 env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
 config = Config(RepositoryEnv(env_path))
