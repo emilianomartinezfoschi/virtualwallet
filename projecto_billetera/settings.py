@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from decouple import Config, Csv, RepositoryEnv
+import dj_database_url
 
 env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
 config = Config(RepositoryEnv(env_path))
@@ -80,16 +81,18 @@ WSGI_APPLICATION = "projecto_billetera.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": config("DATABASE_NAME"),
-        "USER": config("DATABASE_USER"),
-        "PASSWORD": config("DATABASE_PASSWORD"),
-        "HOST": config("DATABASE_HOST"),
-        "PORT": config("DATABASE_PORT", default="5432"),
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": config("DATABASE_NAME"),
+#         "USER": config("DATABASE_USER"),
+#         "PASSWORD": config("DATABASE_PASSWORD"),
+#         "HOST": config("DATABASE_HOST"),
+#         "PORT": config("DATABASE_PORT", default="5432"),
+#     }
+# }
+
+DATABASES = {"default": dj_database_url.config(default=os.getenv("DATABASE_URL"))}
 
 
 # Password validation
