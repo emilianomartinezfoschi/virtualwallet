@@ -24,6 +24,7 @@
             </div>
             <div class="boton_perfil">
                 <form action="/cambio/{{ micliente.name }}">
+                    {% csrf_token %}
                     <input type="hidden" name='{{ micliente.name }}'>
                     <button type="submit" class="boton_perfil_dentro"><a href="/cambio/{{ micliente.name }}">REALIZAR
                             OPERACION</a></button>
