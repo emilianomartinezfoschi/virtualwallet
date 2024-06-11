@@ -35,6 +35,10 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
 CSRF_TRUSTED_ORIGINS = ["https://virtualwallet-production.up.railway.app/"]
 
+CSRF_COOKIE_SECURE = True
+
+CSRF_USE_SESSIONS = False
+
 # Application definition
 
 INSTALLED_APPS = [
