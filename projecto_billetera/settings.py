@@ -91,7 +91,8 @@ WSGI_APPLICATION = "projecto_billetera.wsgi.application"
 #         "PORT": config("DATABASE_PORT", default="5432"),
 #     }
 # }
-
+# POSTGRES_LOCALLY = True
+# if ENVIRONMENT == "production" or POSTGRES_LOCALLY == True:
 DATABASES = {"default": dj_database_url.config(default=os.getenv("DATABASE_URL"))}
 
 
