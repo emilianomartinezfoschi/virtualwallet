@@ -33,6 +33,7 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
+CSRF_TRUSTED_ORIGINS = ["https://virtualwallet-production.up.railway.app/"]
 
 # Application definition
 
