@@ -33,11 +33,6 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
-CSRF_TRUSTED_ORIGINS = ["https://virtualwallet-production.up.railway.app/"]
-
-CSRF_COOKIE_SECURE = True
-
-CSRF_USE_SESSIONS = False
 
 # Application definition
 
@@ -61,6 +56,12 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+CSRF_TRUSTED_ORIGINS = ["https://*.railway.app/"]
+
+CSRF_COOKIE_SECURE = True
+
+CSRF_USE_SESSIONS = False
 
 ROOT_URLCONF = "projecto_billetera.urls"
 
