@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
-from decouple import Config, Csv, RepositoryEnv, AutoConfig
+from decouple import AutoConfig
+
+# from decouple import Config, Csv, RepositoryEnv
 import dj_database_url
 
 
@@ -58,7 +60,9 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
-CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", default="").split(",")
+CSRF_TRUSTED_ORIGINS = [
+    "https://virtualwallet-production.up.railway.app",
+]
 
 CSRF_COOKIE_SECURE = True
 
