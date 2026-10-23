@@ -1,2 +1,15 @@
-# Ignore environment variable files
-# .env
+# Secretos y entorno
+.env
+.env.*
+!.env.example
+
+# Base de datos local y archivos estáticos generados
+db.sqlite3
+staticfiles/
+archivoscss/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
