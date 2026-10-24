@@ -23,11 +23,8 @@
                 Saldo: $ {{ micliente.balance }}
             </div>
             <div class="boton_perfil">
-                <form action="/cambio/{{ micliente.name }}">
-                    {% csrf_token %}
-                    <input type="hidden" name='{{ micliente.name }}'>
-                    <button type="submit" class="boton_perfil_dentro"><a href="/cambio/{{ micliente.name }}">REALIZAR
-                            OPERACION</a></button>
+                <form action="/cambio/{{ micliente.name }}" method="get">
+                    <button type="submit" class="boton_perfil_dentro">REALIZAR OPERACION</button>
                 </form>
             </div>
             {% for message in messages %}
@@ -56,7 +53,10 @@
                 </table>
             </div>
             <div class="salir_perfil">
-                <button class="boton_salir_perfil"><a href="/">Salir</a></button>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="boton_salir_perfil">Salir</button>
+                </form>
             </div>
         </div>
     </div>
