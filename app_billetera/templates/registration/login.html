@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+{% block title %}Ingresar{% endblock %}
+{% block content %}
+<div class="fondo_inicio">
+    <div class="contenedor_inicio" style="height:auto; max-height:none;">
+        <div class="titulo_inicio">Ingresá a tu cuenta</div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p>Cuentas de prueba: la contraseña de todas es <b>demo1234</b></p>
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" class="botones_inicio">ENTRAR</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -19,11 +19,8 @@
             <div class="form_cambio">
                 <form class="form_resultados_cambio" method=POST action="">
                     {% csrf_token %}
-                    <!-- {{ form.as_p }} -->
-                    {{ form.date_time_form.as_hidden }}
-                    {{ form.origin.as_hidden }}
                     <div class="origen_cambio">
-                        ORIGEN DEL DINERO: {{ form.origin.value }}
+                        ORIGEN DEL DINERO: {{ micliente.name }}
                     </div>
                     <div class="destino_cambio">
                         DESTINO DEL DINERO: {{ form.destino_del_dinero }}
@@ -32,12 +29,11 @@
                         MONTO: {{ form.change }}
                     </div>
                     <div class="boton_cambio">
-                        <input type="hidden" name="nombre" value="{{ micliente.name }}">
                         <input class="boton_confirmar_cambio" type="submit" value="CONFIRMAR">
                     </div>
                     <div class="errores_cambio">
                         {{ form.non_field_errors }}
-                        {{ form.field_name.errors }}
+                        {{ form.destino_del_dinero.errors }}
                         {{ form.change.errors }}
                     </div>
                 </form>
